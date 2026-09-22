@@ -104,3 +104,7 @@ def run():
         )
 
     evaluate(model, data, val_acc_all, test_acc_all)
+
+
+if __name__ == "__main__":
+    run()
