@@ -61,6 +61,7 @@ def init_graphkt(
 ):
     data_train, data_test = train_test_split(data, train_split=train_split)
     # torch.cuda.empty_cache()
+
     # Initialize and train models with GCN, GraphSAGE and GAT.
     data_train, data_val, skill_graph, model, skill_net, optimizer = init_models(
         data_train,
@@ -70,6 +71,7 @@ def init_graphkt(
         baseline=baseline,
     )
     print(f"Training {skill_net.tag} model!")
+    print(f"Training data: {len(data_train)}, Validation data: {len(data_val)}")
 
     return data_train, data_val, skill_graph, model, skill_net, optimizer
 
